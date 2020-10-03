@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
   export const Footer = styled.nav`
   display: flex;
-  padding: 20px 0 20px 0;
+  padding: 0px;
+  bottom:0px;
   align-items: center;
   background-color: #181818;
   width: 100%;
@@ -10,7 +11,7 @@ import styled, { css } from 'styled-components';
 
   
 
-  @media (max-width: 786px) {
-      flex-direction: column;
-  }
+  // @media (max-width: 786px) {
+  //     flex-direction: column;
+  // }
 `;

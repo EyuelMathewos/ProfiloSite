@@ -1,19 +1,19 @@
 import styled from "styled-components";
-import wallpaper from './image.jpg';
 export const Split = styled.div`
 position: relative;
-background-image: url('${wallpaper}');
+background-color: #141821;
 background-repeat: no-repeat;
 background-size: cover;
 width: 100%;
-height: 50%;
+height: ${window.innerHeight-20}px;
 top:
+
 }
 `;
 
 export const Synopsis= styled.div`
-  padding-top: 200px;
-  padding-left: 20px;
+  padding-top: 300px;
+  padding-left: 60px;
   max-width: 500px;
   color: white;`;
 
