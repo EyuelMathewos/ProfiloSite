@@ -5,7 +5,7 @@ import React from "react";
 import Main from './route';
 // import App from './components/dashroute';
 import ReactDOM from 'react-dom';
-import {BrowserRouter } from 'react-router-dom'
+import {BrowserRouter } from 'react-router-dom';
 
 
 ReactDOM.render(

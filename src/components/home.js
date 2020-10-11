@@ -6,7 +6,7 @@ import  {  Container, Nav ,
   NavItemButton, 
   Title,
   Wrapper, Icon,IconWrapper, Logo  }  from  "./Container";
-
+import { Box, BoxTitle, BoxDetial } from "./styledComponents/card";
 import '../index.css';
 
 import { SplitImg, Split, SplitTitle, Synopsis } from "./Split.js";
@@ -15,7 +15,9 @@ import {Footer} from './Footer';
 
 import Falling from "./animation/falling"
 import styled, { css } from 'styled-components';
-import logo from "./img/logo"
+import logo from "./img/logo";
+import daco from "./img/Daco.png";
+import { Grid, Card, CardTitle, Image } from "./styledComponents/Grid/grid";
 export const Main = styled.span`
 //color: tomato;
     position: relative;
@@ -121,7 +123,34 @@ body {
 
 
 `;
+export const FloatDiv = styled.div`
 
+  animation: floating 3s linear infinite;
+  width:100%;
+  height:200px;
+  //margin-left: 30px;
+  margin-top: 5px;
+
+@keyframes floating { 
+  0% { transform: translate(0,  0px) } 
+  50%  { transform: translate(0, 15px) } 
+  100%   { transform: translate(0, -0px) }     
+} 
+`;
+export const FloatImg = styled.img`
+
+  //animation: floating 3s linear infinite;
+  width:300px;
+  height:100px
+  //margin-left: 30px;
+  marginTop: 5px;
+
+// @keyframes floating { 
+//   0% { transform: translate(0,  0px) } 
+//   50%  { transform: translate(0, 15px) } 
+//   100%   { transform: translate(0, -0px) }     
+// } 
+`;
 const SplitText= (props)=>{
   return(
       <Main aria-label={props.copy} role={props.role}>
@@ -181,9 +210,7 @@ export class Home extends React.Component {
 
            
             <NavItems>
-                <Button primary>Join Now</Button>
-                <Button header>Log in</Button>
-                {/* <Icon type="search"/> */}
+              
             </NavItems>
         </Nav>
         <Split>        
@@ -216,31 +243,32 @@ height: ${window.innerHeight-20}px;
 top: */}
 
 <div>
-        <div style={{
-"display": "flex",
-"position":"relative",
+<Box>
+<BoxTitle>Projects</BoxTitle> <br/>
+<BoxDetial></BoxDetial>
+<Grid/>
+</Box>
+<Box>
+<BoxTitle>About</BoxTitle>
+<BoxDetial> 
+<Card style={{  "display": "flex",
+            "justifyContent": "space-between",
+            "margin": "0",
+            "padding": "0",
+            "overflow": "hidden",
+            "height": "400px",
+            "width":"100%"}}>
+  <FloatImg src={daco}/>
+  <FloatDiv>
+  <CardTitle>I am Creative and innovative</CardTitle> 
+  <CardTitle>I have technical skills</CardTitle>
+  <CardTitle> Problem Solving</CardTitle> 
+  <CardTitle>Fascinated to Learn</CardTitle>
+  </FloatDiv>
+</Card>
+</BoxDetial>
+</Box>
 
-"will-change":"transform",
-"width":"100%",
-"height":"1800px",
-//"clip-path":"polygon(0px 15%, 100% 25%, 100% 85%, 0px 75%)",
-"background":"linear-gradient(to right, slateblue 0%, deepskyblue 100%)",
-"transform" : "translate3d(0px, 1333.9px, 0px)"
-}}>
-
-</div>
-<div style={{
-"display": "flex",
-"position":"relative",
-
-"will-change":"transform",
-"width":"100%",
-"height":"1800px",
-//"clip-path":"polygon(0px 15%, 100% 25%, 100% 85%, 0px 75%)",
-"background":"#333"
-}}>
-
-</div>
 
 </div>
 <Footer></Footer>
