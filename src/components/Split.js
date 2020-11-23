@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const Split = styled.div`
 position: relative;
 background-color: #141821;

@@ -2,22 +2,23 @@ import React from "react";
 import  {  Container, Nav ,
   NavBrand,
   NavItems,
-  NavItem,
-  NavItemButton, 
-  Title,
-  Wrapper, Icon,IconWrapper, Logo  }  from  "./Container";
-import { Box, BoxTitle, BoxDetial } from "./styledComponents/card";
+   
+  
+   Icon, Logo  }  from  "./Container";
+import { Box, BoxTitle, BoxDetial } from "./styledComponents/box";
 import '../index.css';
 
-import { SplitImg, Split, SplitTitle, Synopsis } from "./Split.js";
-import { Button } from './Button';
+import {  Split, Synopsis } from "./Split.js";
 import {Footer} from './Footer';
 
 import Falling from "./animation/falling"
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import logo from "./img/logo";
-import daco from "./img/Daco.png";
-import { Grid, Card, CardTitle, Image } from "./styledComponents/Grid/grid";
+import { Grid } from "./styledComponents/Grid/grid";
+import Contact from "./contact/contact.js"
+import { ContactCard } from "./contact/contact.js"
+
+import PopUp from "./contact/popup"
 export const Main = styled.span`
 //color: tomato;
     position: relative;
@@ -53,7 +54,7 @@ animation: blink 1s linear infinite;
   }
 `;
 export const H1 = styled.h1`
-  font-size: 80px;
+  font-size: 5.9vw;
   text-align: center;
   //font-weight: 800;
   //color: #353239;
@@ -155,7 +156,7 @@ const SplitText= (props)=>{
   return(
       <Main aria-label={props.copy} role={props.role}>
           {props.copy.split("").map(function(char, index){
-            console.log("index of"+index)
+            //console.log("index of"+index)
             let style = {"animationDelay": (0.5 + index / 10) + "s"}
             return (<Main Style={{"display":"flex"}} key={index}><Span
               aria-hidden="true"
@@ -163,7 +164,7 @@ const SplitText= (props)=>{
               style={style}>
               {char}
             </Span>
-          {index==28&&<Blink>_</Blink>} 
+          {index===28&&<Blink>_</Blink>} 
             
             </Main>)
           })
@@ -242,15 +243,37 @@ width: 100%;
 height: ${window.innerHeight-20}px;
 top: */}
 
-<div>
 <Box>
 <BoxTitle>Projects</BoxTitle> <br/>
 <BoxDetial></BoxDetial>
 <Grid/>
 </Box>
-<Box>
+
+
+<Box secondary>
+<BoxTitle>Contact Me</BoxTitle>
+<ContactCard>
+<div style={{  "display": "flex",
+            "justifyContent": "space-between",
+            "align-items": "center",
+            "padding": "20px",
+            "width":"80%"
+            }}>
+<a href="https://t.me/EyuelM" target="_blank" rel="noopener noreferrer"> <Icon style={{"font-size":"48px", "paddingLeft":"20px", "margin":"2px 8px 0px 0px"}} className="fa fa-telegram"/></a>
+<a href="https://www.linkedin.com/in/eyuel-mathewos-a5701a164/" target="_blank" rel="noopener noreferrer"><Icon style={{"font-size":"48px", "paddingLeft":"20px", "margin":"2px 8px 0px 0px"}} className="fa fa-linkedin"/></a>
+<a href="mailto:eyuelmathewos@gmail.com" target="_blank" rel="noopener noreferrer"><Icon style={{"font-size":"48px", "paddingLeft":"20px", "margin":"2px 8px 0px 0px"}} className="fa fa-envelope"/></a>
+</div>
+<Contact/>
+</ContactCard>
+
+
+
+
+</Box>
+
+{/* <Box>
 <BoxTitle>About</BoxTitle>
-<BoxDetial> 
+
 <Card style={{  "display": "flex",
             "justifyContent": "space-between",
             "margin": "0",
@@ -259,6 +282,7 @@ top: */}
             "height": "400px",
             "width":"100%"}}>
   <FloatImg src={daco}/>
+  
   <FloatDiv>
   <CardTitle>I am Creative and innovative</CardTitle> 
   <CardTitle>I have technical skills</CardTitle>
@@ -266,12 +290,10 @@ top: */}
   <CardTitle>Fascinated to Learn</CardTitle>
   </FloatDiv>
 </Card>
-</BoxDetial>
-</Box>
+</Box> */}
 
-
-</div>
 <Footer></Footer>
+<PopUp/>
 </Container>
 
     );

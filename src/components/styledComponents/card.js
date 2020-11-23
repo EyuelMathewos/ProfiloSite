@@ -1,35 +1,119 @@
-import React from "react";
-import { Link } from 'react-router-dom';
+import React from 'react'
 import styled, { css } from 'styled-components';
+import { Wrapper, Title, Icon} from '.././Container';
+import {Button} from ".././Button";
+export  const  Image  =  styled.div`
+background-size: contain;
+background-position: center;
+background-image: url('${props => props.content}');
+background-repeat: no-repeat;
+font-size: 24px;
+font-weight: bold;
+text-shadow: 0 0 10px rbga(0, 0, 0, 0.2);
+color: red;
+text-align: center;
+/* padding: 50px 0px;*/
+margin: 6px;
+width:100%
+`;
 
-export  const  Box  =  styled.div`
-    position:relative;
-   // padding: 20px;
-    will-change:transform;
-    width:100%;
-    height:1200px;
-    //clip-path:polygon(0px 15%, 100% 25%, 100% 85%, 0px 75%);
-    background:linear-gradient(to right, slateblue 0%, deepskyblue 100%);
-   // transform : translate3d(0px, 1333.9px, 0px);
-      `;
+export  const  CardContainer  =  styled.div`
+display:grid;
+grid-template-columns: 50% 50%;
+//background-size: cover;
+//background-position: center;
+//background-image: url('${props => props.content}');
+font-size: 24px;
+font-weight: bold;
+text-shadow: 0 0 10px rbga(0, 0, 0, 0.2);
+color: red;
+text-align: center;
+/* padding: 50px 0px;*/
+margin: 6px;
+//width:300px;
+height:300px;
+background: linear-gradient(to right, rgb(213, 133, 255) 0%, rgb(0, 255, 238) 100%);
+border-radius: 13px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+transition: all 0.3s ease;
+&:hover {
+    margin-top: -5px;
+  }
 
-  export const BoxTitle = styled.h1`
-      font-size: 42px;
-      color: white;
-      padding: 20px;
-    `;
-    export const BoxDetial = styled.h4`
-      color: white;
-    `;
-{/* <div style={{
-"display": "flex",
-"position":"relative",
+@media (max-width: 1440px) {
+    width:${props => (props.swidth)/4}px;
+   
+ }
+ @media (max-width: 1200px) {
+    width:${props => (props.swidth)/4}px;
+   
+ }
+ @media (max-width: 1024px) {
+  
+    width:${props => (props.swidth)/4}px;
+   
+ }
+ @media (max-width: 768px) {
+     
+    width:${props => (props.swidth)-9/3}px;
+   
+ }
+ @media (max-width: 480px) {
+    width:${props => (props.swidth)}px;
+ }
+  `;
+export const CardTitle = styled.h1`
+  font-size: 42px;
+  color: white;
+`;
 
-"will-change":"transform",
-"width":"100%",
-"height":"1800px",
-//"clip-path":"polygon(0px 15%, 100% 25%, 100% 85%, 0px 75%)",
-"background":"#333"
-}}>
+export const CardDetial = styled.p`
+  color: white;
+  height:25%;
+`;
+export class Card extends React.Component {
+    constructor(props) {
+      super(props);
+      this.handleMouseHover = this.handleMouseHover.bind(this);
+     this.state = {
+        width: window.innerWidth,
+        catagory:props.catagory,
+        isHovering: false
+      };
 
-</div> */}
+    }  
+
+    handleMouseHover() {
+        this.setState(this.toggleHoverState);
+      }
+    
+      toggleHoverState(state) {
+        return {
+          isHovering: !state.isHovering,
+        };
+      }
+      golink = () => {
+        window.open('http://google.com','_blank');
+    }
+
+
+    render() {
+        return (
+
+            <CardContainer key={this.props.key} onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}> 
+              <Image swidth={this.state.width} width={this.state.width} content={this.props.cardDetial.picture}/>
+          <div><CardTitle>{this.props.cardDetial.title}</CardTitle><CardDetial>{this.props.cardDetial.detail}
+         
+
+          </CardDetial>
+          {this.state.isHovering && this.props.cardDetial.url!=null &&<div style={{"display":"absolute","float":"right"}}>
+             <a href={this.props.cardDetial.url} target="_blank"> <Button> Link <Icon secondary className="fa fa-play" aria-hidden="true"/></Button></a>
+           </div>}
+          </div>
+
+              </CardContainer>
+        )
+    }
+
+}
+export default Card

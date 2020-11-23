@@ -1,11 +1,10 @@
-import React from "react";
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 export  const  Container  =  styled.div`
-      position: absolute;
+      position: relative;
       width: 100%; 
-      height: 4000px;
+      height: 100%;
       background-color:#141821;
       `;
 
@@ -107,9 +106,10 @@ export const LinkS = styled.button`
   }
 `;
 export const Icon = styled.i`
-font-size: 32px;
-margin-right: 25px;
-color:red;
+//font-size: 32px;
+//margin-right: 25px;
+color:#333;
+
 
   ${props => props.secondary && css`
     color: white;

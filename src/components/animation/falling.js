@@ -55,7 +55,7 @@ const Snowflake = (props) =>{
     image,
     coderocta
      ];
-    console.log(logos[Math.floor((Math.random()*logos.length))])
+   // console.log(logos[Math.floor((Math.random()*logos.length))])
     return(
         <Fall id={`item${props.id}`} style={props.style}>
             

@@ -9,16 +9,34 @@ export const Button = styled.button`
   background: transparent;
   color: white;
   border: 1px solid white;
-
+  
+  &: focus{
+    outline:none;
+  }
+  &: hover{
+    background:#181818;
+    border: 1px solid #181818;
+  }
   ${props => props.primary && css`
     padding: 8px 12px;
-    background: #FF2401;
+    background: #333333;
     color: white;
-    border: 1px solid red;
+    border: 1px solid #333333;
     font-family: Roboto ,Dancing Script,cursive, sans-serif;
-    font-size: 18px;
+    font-size: 1em;
+    font-weight: bold;
     width: 150px;
   `}
+  ${props => props.secondary && css`
+  background: #ddd5d5d6;
+  color: black;
+  border: none;
+  font-weight: bold;
+  width: 140px;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+`}
   ${props => props.header && css`
     color: #FF2401;
     border: 1px solid #FF2401;
@@ -28,4 +46,4 @@ export const Button = styled.button`
     width: 95px;
     padding: 8px 12px;
   `}
-`
+`;
