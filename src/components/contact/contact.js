@@ -158,7 +158,7 @@ export class Contact extends React.Component {
     //   }
     // })
 //this is for the popup message
-//this.props.updateModal({"open":true,"content":""});
+this.props.updateModal({"open":true,"content":""});
 //console.log("the props")
 //console.log(this.props)
 

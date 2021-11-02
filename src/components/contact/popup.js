@@ -1,7 +1,9 @@
 import React from 'react'
 import styled, { css } from 'styled-components';
 import {  Split, Synopsis } from "./Split.js";
-
+import { connect } from 'react-redux';
+import updateModal from '../../redux/Action/modalAction';
+import daco from "../img/Daco.png";
 const DetailPane = styled.div`
   //height: 475px;
   //background: #00000094;
@@ -20,7 +22,7 @@ const ModalDiv = styled.div`
   //padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
-  width: 25%; /* Full width */
+  width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
@@ -36,17 +38,17 @@ const ModalDiv = styled.div`
 
   position: relative;
   background-color: #181819;
-  margin: auto;
+  //margin: auto;
   //padding: 20px;
   //border: 1px solid #888;
-  width: 100%;
-  //height:500px;
+  width: 35%;
+  height:100%;
 `;
 const IconM = styled.i`
   //color: #fbf6f696;
-  color:#333;
-  float: right;
-  fontSize: 28px;
+  color:#fff;
+  float: left;
+  font-size: 28px;
   font-weight: bold;
   padding: 20px;
   ${props => props.secondary && css`
@@ -70,61 +72,44 @@ class PopUp extends React.Component {
         // this.handleClickOutside = this.handleClickOutside.bind(this);
 
   }  
-  handleMouseHover() {
-
-    //   console.log("this is the ref value");
-    //  console.log(this.ref.current);
-    
-    
-     console.log(this.ref.current)
-     if(this.ref.current<0){
-    //  this.ref.current.div.style.display = "none";
-     console.log("this is the insed of condition")
-     this.setState({
-      modalState: !this.state.modalState
-    });
-    }else{
+  toggleHoverState() {
+    console.log("this is state form redux open")
+console.log(this.props.modal.open);
       this.setState({
-        modalState: true
+        modalState: !this.state.modalState
       });
-    }
-    
-    }
-  
-    toggleHoverState() {
-      
-
-        this.setState({
-          modalState: !this.state.modalState
-        });
-      
-    };  
+      this.props.updateModal(!this.props.modal.open)
+  };  
 
 
-    handleClickOutside (){
-      // event.preventDefault();
-      // let valu=
-      console.log("this are the values")
-       console.log(this.ref.current)
-       console.log(window.event.target)
-     
-       if (this.ref.current === window.event.target) {
-          //  alert('You clicked outside of me!');
-        this.setState({
-          modalState: !this.state.modalState
-        });
-       }
-      //  else{
-      //    alert("this is the other code");
-      //    this.setState({
-      //     modalState: !this.state.modalState
-      //   });
-      //  }
+  handleClickOutside (){
+    // event.preventDefault();
+    // let valu=
+    console.log("this are the values")
+     console.log(this.ref.current)
+     console.log(window.event.target)
+     console.log(this.props.modal.open)
+   
+     if (this.ref.current == window.event.target) {
+        //  alert('You clicked outside of me!');
+      this.setState({
+        modalState: !this.state.modalState
+      });
+      this.props.updateModal(!this.props.modal.open)
      }
+
+    //  else{
+    //    alert("this is the other code");
+    //    this.setState({
+    //     modalState: !this.state.modalState
+    //   });
+    //  }
+   }
 
   componentDidMount() {
      // document.addEventListener('mousedown', this.handleClickOutside);
-     
+     console.log("this is from pop up");
+     console.log(this.state.modalState);
   }
 
   componentWillUnmount() {
@@ -139,14 +124,17 @@ class PopUp extends React.Component {
         <div>
           {/* <IconM secondary className="fa fa-play-circle" aria-hidden="true" onClick={()=>{this.toggleHoverState()}}/> */}
         {/* <button onClick={()=>{this.toggleHoverState()}}>Hello world</button> */}
-        {this.state.modalState&&
+        {this.props.modal.open&&
         <DetailPane>
 <ModalDiv ref={this.ref} onClick={()=>{this.handleClickOutside()}}>
   <ModalContent>
-
-  <Split>
   <IconM className="fa fa-times-circle" aria-hidden="true" onClick={()=>{this.toggleHoverState()}}/>
-        <Synopsis>
+
+  <Split content={daco}>
+  <Synopsis>
+        <p style={{"color":"white"}}>May the Force be with you</p>
+        </Synopsis>
+        {/* <Synopsis> */}
             {/* <div>
              <SplitTitle>Cool, Catchy Slogan</SplitTitle>
           <Info>Year</Info>
@@ -157,8 +145,10 @@ class PopUp extends React.Component {
 
                 <Button secondary><Icon secondary className="fa fa-play" aria-hidden="true"/>Play</Button>
             </div> */}
-            </Synopsis>
+          {/* </Synopsis> */}
         </Split>
+
+
       
   </ModalContent>
 </ModalDiv>
@@ -169,4 +159,17 @@ class PopUp extends React.Component {
    
       )}
     }
-    export default PopUp
+
+    const MapStateToProps = (state) => {
+      return {
+        modal: state.modal
+    };
+    };
+    const MapDispatchToProps = (dispatch) => {
+      return{
+        updateModal: (m)=> dispatch(updateModal(m))
+      }
+        
+      
+    };
+    export default connect(MapStateToProps, MapDispatchToProps)(PopUp);
