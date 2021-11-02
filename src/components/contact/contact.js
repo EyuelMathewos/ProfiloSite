@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Button } from '../Button';
-import { submitData } from '../../service/config.js';
+import submitData from '../../config.js';
 import { connect } from 'react-redux';
 import updateModal from '../../redux/Action/modalAction';
 export const FormInput = styled.input`
@@ -10,7 +10,7 @@ export const FormInput = styled.input`
   height:35px;
   width:${props => props.width};
   color: #fff;
-  font-size: 16px;
+  fontSize: 16px;
   // border: 2px solid #b2dfff;
   border:none;
   border-radius: 3px;
@@ -47,7 +47,7 @@ export const TextArea = styled.textarea`
   min-height:150px;
   width:${props => props.width};
   color: #fff;
-  font-size: 16px;
+  fontSize: 16px;
   border: 2px solid #b2dfff;
   border-radius: 3px;
   box-sizing: border-box;
@@ -81,7 +81,7 @@ export const  ContactCard  =  styled.div`
     //background-size: cover;
     //background-position: center;
     //background-image: url('${props => props.content}');
-    font-size: 24px;
+    fontSize: 24px;
     font-weight: bold;
     text-shadow: 0 0 10px rbga(0, 0, 0, 0.2);
     color: red;
@@ -119,9 +119,9 @@ export const  ContactCard  =  styled.div`
     
   let data;
   let values={};
-  const modalCall = () => {
+  //const modalCall = () => {
     //this.props.updateModal({"open":true,"content":""})}
-  } 
+  //} 
 export class Contact extends React.Component {
   constructor() {
     super();
@@ -151,7 +151,7 @@ export class Contact extends React.Component {
   
 //console.log(values)
   submitData( values.name, values.email, values.subject, values.message );
-
+  e.target.reset();
     //  this.props.form.validateFields((err, values) => {
     //   if (!err) {
     //     console.log(values)

@@ -23,7 +23,7 @@ export const Button = styled.button`
     color: white;
     border: 1px solid #333333;
     font-family: Roboto ,Dancing Script,cursive, sans-serif;
-    font-size: 1em;
+    fontSize: 1em;
     font-weight: bold;
     width: 150px;
   `}
@@ -33,7 +33,7 @@ export const Button = styled.button`
   border: none;
   font-weight: bold;
   width: 140px;
-  font-size: 1em;
+  fontSize: 1em;
   margin: 1em;
   padding: 0.25em 1em;
 `}
@@ -42,7 +42,7 @@ export const Button = styled.button`
     border: 1px solid #FF2401;
     font-family: Roboto ,Dancing Script,cursive, sans-serif;
     font-weight: bold;
-    font-size: 18px;
+    fontSize: 18px;
     width: 95px;
     padding: 8px 12px;
   `}

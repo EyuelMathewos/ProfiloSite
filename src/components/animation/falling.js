@@ -21,7 +21,7 @@ export  const  Fall  =  styled.div`
 	width: 0.1%;
 	color: #FFFAFA;
 	opacity: 0;
-	font-size: 120px;
+	fontSize: 120px;
 	margin: 0;
 	padding: 0;
     animation: fall 16s linear infinite;

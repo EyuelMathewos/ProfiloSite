@@ -19,7 +19,7 @@ export const Synopsis= styled.div`
   color: white;`;
 
 export const SplitTitle = styled.h1`
-  font-size: 42px;
+  fontSize: 42px;
 `;
 
 export const SplitImg = styled.img`

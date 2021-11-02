@@ -38,7 +38,7 @@ export const Span = styled.span`
     &:hover {
       //bottom: 0em;
       font-weight: 700;
-      //font-size:90px;
+      //fontSize:90px;
     }
 
 
@@ -54,7 +54,7 @@ animation: blink 1s linear infinite;
   }
 `;
 export const H1 = styled.h1`
-  font-size: 5.9vw;
+  fontSize: 5.9vw;
   text-align: center;
   //font-weight: 800;
   //color: #353239;
@@ -245,7 +245,7 @@ top: */}
 
 <Box>
 <BoxTitle>Projects</BoxTitle> <br/>
-<BoxDetial></BoxDetial>
+<BoxDetial/>
 <Grid/>
 </Box>
 
@@ -255,13 +255,13 @@ top: */}
 <ContactCard>
 <div style={{  "display": "flex",
             "justifyContent": "space-between",
-            "align-items": "center",
+            "alignItems": "center",
             "padding": "20px",
             "width":"80%"
             }}>
-<a href="https://t.me/EyuelM" target="_blank" rel="noopener noreferrer"> <Icon style={{"font-size":"48px", "paddingLeft":"20px", "margin":"2px 8px 0px 0px"}} className="fa fa-telegram"/></a>
-<a href="https://www.linkedin.com/in/eyuel-mathewos-a5701a164/" target="_blank" rel="noopener noreferrer"><Icon style={{"font-size":"48px", "paddingLeft":"20px", "margin":"2px 8px 0px 0px"}} className="fa fa-linkedin"/></a>
-<a href="mailto:eyuelmathewos@gmail.com" target="_blank" rel="noopener noreferrer"><Icon style={{"font-size":"48px", "paddingLeft":"20px", "margin":"2px 8px 0px 0px"}} className="fa fa-envelope"/></a>
+<a href="https://t.me/EyuelM" target="_blank" rel="noopener noreferrer"> <Icon style={{"fontSize":"48px", "paddingLeft":"20px", "margin":"2px 8px 0px 0px"}} className="fa fa-telegram"/></a>
+<a href="https://www.linkedin.com/in/eyuel-mathewos-a5701a164/" target="_blank" rel="noopener noreferrer"><Icon style={{"fontSize":"48px", "paddingLeft":"20px", "margin":"2px 8px 0px 0px"}} className="fa fa-linkedin"/></a>
+<a href="mailto:eyuelmathewos@gmail.com" target="_blank" rel="noopener noreferrer"><Icon style={{"fontSize":"48px", "paddingLeft":"20px", "margin":"2px 8px 0px 0px"}} className="fa fa-envelope"/></a>
 </div>
 <Contact/>
 </ContactCard>

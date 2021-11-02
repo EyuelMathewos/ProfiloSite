@@ -1,13 +1,13 @@
 import React from 'react'
-import styled, { css } from 'styled-components';
-import { Wrapper, Title, Icon} from '.././Container';
+import styled from 'styled-components';
+import { Icon } from '.././Container';
 import {Button} from ".././Button";
 export  const  Image  =  styled.div`
 background-size: contain;
 background-position: center;
 background-image: url('${props => props.content}');
 background-repeat: no-repeat;
-font-size: 24px;
+fontSize: 24px;
 font-weight: bold;
 text-shadow: 0 0 10px rbga(0, 0, 0, 0.2);
 color: red;
@@ -23,7 +23,7 @@ grid-template-columns: 50% 50%;
 //background-size: cover;
 //background-position: center;
 //background-image: url('${props => props.content}');
-font-size: 24px;
+fontSize: 24px;
 font-weight: bold;
 text-shadow: 0 0 10px rbga(0, 0, 0, 0.2);
 color: red;
@@ -63,13 +63,14 @@ transition: all 0.3s ease;
  }
   `;
 export const CardTitle = styled.h1`
-  font-size: 42px;
+  fontSize: 1.5em;
   color: white;
 `;
 
 export const CardDetial = styled.p`
   color: white;
   height:25%;
+  fontSize: 0.8em;
 `;
 export class Card extends React.Component {
     constructor(props) {
@@ -100,14 +101,12 @@ export class Card extends React.Component {
     render() {
         return (
 
-            <CardContainer key={this.props.key} onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}> 
+            <CardContainer onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}> 
               <Image swidth={this.state.width} width={this.state.width} content={this.props.cardDetial.picture}/>
-          <div><CardTitle>{this.props.cardDetial.title}</CardTitle><CardDetial>{this.props.cardDetial.detail}
-         
-
-          </CardDetial>
+          <div><CardTitle>{this.props.cardDetial.title}</CardTitle>
+          <CardDetial>{this.props.cardDetial.detail}</CardDetial>
           {this.state.isHovering && this.props.cardDetial.url!=null &&<div style={{"display":"absolute","float":"right"}}>
-             <a href={this.props.cardDetial.url} target="_blank"> <Button> Link <Icon secondary className="fa fa-play" aria-hidden="true"/></Button></a>
+             <a href={this.props.cardDetial.url} target="_blank" rel="noopener noreferrer"> <Button> Link <Icon secondary className="fa fa-play" aria-hidden="true"/></Button></a>
            </div>}
           </div>
 

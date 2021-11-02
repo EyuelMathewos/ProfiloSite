@@ -11,7 +11,7 @@ export  const  Container  =  styled.div`
  export const Nav = styled.nav`
     display: flex;
     padding: 20px;
-    align-items: center;
+    alignItems: center;
     background-color: #181818;
    // width: 100%;
     height:25px;
@@ -31,7 +31,7 @@ export const NavBrand = styled(Link)`
     flex-grow: 1;
     font-family:  'Permanent Marker', Dancing Script,cursive, sans-serif;
     font-weight: bold;
-    font-size: 40px;
+    fontSize: 40px;
     font-weight: 700;
     color: #ffffff;
     text-decoration: none;
@@ -46,7 +46,7 @@ width: 50px;
 export const NavItems = styled.ul`list-style: none;
     padding-inline-start: 0;
     display: flex;
-    align-items: center;`;
+    alignItems: center;`;
 
 export const NavItem = styled(Link)`margin-right: 20px;
     cursor: pointer;
@@ -77,7 +77,7 @@ export const NavItemButton = styled(NavItem)`padding: 10px 10px;
     margin: 8px 0 2px;
     font-family: Helvetica ,Roboto ,Dancing Script,cursive, sans-serif;
     font-weight: 500;
-    font-size:20px;
+    fontSize:20px;
     color: #ffffff;
   `;
  export const Wrapper = styled.section`
@@ -106,7 +106,7 @@ export const LinkS = styled.button`
   }
 `;
 export const Icon = styled.i`
-//font-size: 32px;
+//fontSize: 32px;
 //margin-right: 25px;
 color:#333;
 

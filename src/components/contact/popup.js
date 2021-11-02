@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styled, { css } from 'styled-components';
-import {Icon} from '../Container';
-import { SplitImg, Split, SplitTitle, Synopsis } from "./Split.js";
-import { Button } from '../Button';
+import {  Split, Synopsis } from "./Split.js";
+
 const DetailPane = styled.div`
   //height: 475px;
   //background: #00000094;
@@ -27,11 +26,11 @@ const ModalDiv = styled.div`
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 `;
-const Info = styled.span`
-border-right:1px solid #a3a3a3;
-margin-right:9px;
-padding-right: 11px;
-`;
+// const Info = styled.span`
+// border-right:1px solid #a3a3a3;
+// margin-right:9px;
+// padding-right: 11px;
+// `;
 
   const ModalContent = styled.div`
 
@@ -47,11 +46,11 @@ const IconM = styled.i`
   //color: #fbf6f696;
   color:#333;
   float: right;
-  font-size: 28px;
+  fontSize: 28px;
   font-weight: bold;
   padding: 20px;
   ${props => props.secondary && css`
-  font-size: 80px;
+  fontSize: 80px;
   margin-right: 25px;
   color:red;
 `}
@@ -75,8 +74,8 @@ class PopUp extends React.Component {
 
     //   console.log("this is the ref value");
     //  console.log(this.ref.current);
-    let valnull= null
-     console.log(typeof(this.ref.current))
+    
+    
      console.log(this.ref.current)
      if(this.ref.current<0){
     //  this.ref.current.div.style.display = "none";
@@ -109,7 +108,7 @@ class PopUp extends React.Component {
        console.log(this.ref.current)
        console.log(window.event.target)
      
-       if (this.ref.current == window.event.target) {
+       if (this.ref.current === window.event.target) {
           //  alert('You clicked outside of me!');
         this.setState({
           modalState: !this.state.modalState

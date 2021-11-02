@@ -3,7 +3,7 @@ import styled from 'styled-components';
   display: flex;
   //padding: 0px;
   //bottom:0px;
-  align-items: center;
+  alignItems: center;
   background-color: #181818;
   color: #fff
   width: 100%;

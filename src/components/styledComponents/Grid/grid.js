@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 import one from "../../img/computer.png";
 import two from '../../img/github.png';
-import netflix from "../../img/netflixlogonew.png"
-import shop from "../../img/shopingCart"
+//import netflix from "../../img/netflixlogonew.png"
+import netflixIcon from "../../img/logoIcon.png"
 import {Card} from "../card"
 //const content = [one, two]
-const content = [{"picture":one, "title": "CMS", "detail":"Construction Management System using C#"},{"picture":two, "title": "CMS2", "detail":"Construction Management System Using Node and React"},{"picture":shop, "title": "Shop App", "detail":"Demo Shop app Design in angular"},{"picture":netflix, "title": "Netflix Clone", "detail":"Netflix clone design by styled components","url":"https://netflix-clone-et.web.app/"}]
+const content = [{"picture":one, "title": "CMS", "detail":"Construction Management System using C#", "url":"https://github.com/EyuelMathewos/constraction-management-system-C"},{"picture":two, "title": "CMS2", "detail":"Construction Management System Using Node and React","url":"https://github.com/EyuelMathewos/Construction-Managment-System-React"},{"picture":netflixIcon, "title": "Netflix Clone Flutter", "detail":"This project is a simplified front end clone of Netflix. Created with Flutter.","url":"https://github.com/EyuelMathewos/NetflixCloneFlutter"},{"picture":netflixIcon, "title": "Netflix Clone React", "detail":"Netflix clone design by styled components","url":"https://netflix-clone-et.herokuapp.com/"}]
 export  const  FlexContainer  =  styled.div`
     position: relative;
     display: flex;
@@ -47,7 +47,7 @@ export  const  FlexContainer  =  styled.div`
     background-position: center;
     background-image: url('${props => props.content}');
     background-repeat: no-repeat;
-    font-size: 24px;
+    fontSize: 24px;
     font-weight: bold;
     text-shadow: 0 0 10px rbga(0, 0, 0, 0.2);
     color: red;
@@ -63,7 +63,7 @@ export  const  FlexContainer  =  styled.div`
 //     //background-size: cover;
 //     //background-position: center;
 //     //background-image: url('${props => props.content}');
-//     font-size: 24px;
+//     fontSize: 24px;
 //     font-weight: bold;
 //     text-shadow: 0 0 10px rbga(0, 0, 0, 0.2);
 //     color: red;
@@ -103,7 +103,7 @@ export  const  FlexContainer  =  styled.div`
 //      }
 //       `;
 // export const CardTitle = styled.h1`
-//       font-size: 42px;
+//       fontSize: 42px;
 //       color: white;
 //     `;
 

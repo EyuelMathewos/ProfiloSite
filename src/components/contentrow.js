@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
   export const ContentRow = styled.div`
   display: flex;
   padding: 20px;
-  align-items: center;
+  alignItems: center;
   width: 100%;
   justify-content: space-between;
 `;

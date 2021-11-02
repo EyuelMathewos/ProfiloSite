@@ -17,7 +17,7 @@ export  const  Box  =  styled.div`
       `;
 
   export const BoxTitle = styled.h1`
-      font-size: 42px;
+      fontSize: 42px;
       color: white;
       padding: 20px;
     `;

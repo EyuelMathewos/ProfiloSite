@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import wallpaper from '../img/computer.png';
+//import wallpaper from '../img/computer.png';
 export const Split = styled.div`
 position: relative;
 background-image: url('${props => props.content}');
@@ -24,7 +24,7 @@ export const Synopsis= styled.div`
   `;
 
 export const SplitTitle = styled.h1`
-  font-size: 2.9vw;
+  fontSize: 2.9vw;
 `;
 
 export const SplitImg = styled.img`
