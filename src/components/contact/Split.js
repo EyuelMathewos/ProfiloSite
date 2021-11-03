@@ -34,10 +34,10 @@ export const Synopsis= styled.div`
   bottom:0;
   left:0;
   padding-top: 230px;
-  padding-left: 20px;
-  width: 40%;
+  //padding-left: 20px;
+  width: 100%;
   color: white;
-  
+  text-align: center;
   `;
 
 export const SplitTitle = styled.h1`

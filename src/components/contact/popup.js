@@ -57,7 +57,18 @@ const IconM = styled.i`
   color:red;
 `}
 `;
-
+export const CardDetial = styled.p`
+  color: #008632;
+  height:25%;
+  font-size: 1.8em;
+  font-weight:800;
+`;
+export const SubDetial = styled.p`
+  color: #008632;
+  height:25%;
+  font-size: 1em;
+  font-weight:800;
+`;
 class PopUp extends React.Component {
   constructor(props) {
     super(props);
@@ -132,7 +143,8 @@ console.log(this.props.modal.open);
 
   <Split content={daco}>
   <Synopsis>
-        <p style={{"color":"white"}}>May the Force be with you</p>
+        <CardDetial>May the Force be with you</CardDetial>
+        <SubDetial>Thank You for Leaving you contact</SubDetial>
         </Synopsis>
         {/* <Synopsis> */}
             {/* <div>
